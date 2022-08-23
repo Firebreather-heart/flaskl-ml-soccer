@@ -1,1 +1,1 @@
-web gunicorn wsgi:soccer_pred
+web: gunicorn wsgi:application --log-file -
