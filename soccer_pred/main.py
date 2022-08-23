@@ -3,7 +3,7 @@ import numpy as np
 import pickle
 import joblib
 import pandas as pd
-from utils import apply_transform_prod
+from .utils import apply_transform_prod
 from sklearn.ensemble import RandomForestClassifier
 
 
@@ -38,16 +38,16 @@ def home():
 
 
 # Load Model
-loaded_model = joblib.load('assets/soccer_forest.sav')
+loaded_model = joblib.load('soccer_pred/assets/soccer_forest.sav')
 
 # Load team code and team_reverse_code and le_classes
-with open('assets/team_code.pickle', 'rb') as handle:
+with open('soccer_pred/assets/team_code.pickle', 'rb') as handle:
     team_code= pickle.load(handle)
 
-with open('assets/team_reverse_code.pickle', 'rb') as handle:
+with open('soccer_pred/assets/team_reverse_code.pickle', 'rb') as handle:
     team_reverse_code= pickle.load(handle)
 
-with open('assets/le_classes.pickle', 'rb') as handle:
+with open('soccer_pred/assets/le_classes.pickle', 'rb') as handle:
     le_classes= pickle.load(handle)
 
 @app.route("/predict/", methods=['GET', 'POST'])
