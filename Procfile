@@ -1,1 +1,1 @@
-web gunicorn wsgi:flask-ml-soccer
+web gunicorn wsgi:main
